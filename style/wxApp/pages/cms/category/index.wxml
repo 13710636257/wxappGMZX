@@ -1,0 +1,17 @@
+<scroll-view class="category_boxs" scroll-x="true">
+  <view class="category_box" wx:for="{{categoryItem.title}}">
+    <view class="{{currentItem==item.id?'active':''}}" data-id="{{item.id}}" bindtap="categoryClick">{{item.title}}</view>
+  </view>
+</scroll-view>
+<view class="lists {{currentItem==item.topId?'show':'hide'}}" wx:for="{{categoryItem.lists}}">
+  <view class="title">
+    <view class="title_con">
+      <image mode="aspectFit" src="{{item.ico}}">
+      </image>
+     {{item.title}}
+    </view>
+  </view>
+  <view class="list">
+    <navigator url=""  wx:for="{{item.list}}">{{item.itemname}}</navigator>
+  </view>
+</view>

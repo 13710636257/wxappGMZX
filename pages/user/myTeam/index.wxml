@@ -1,0 +1,43 @@
+<view class="page">
+  <view class="section" style='padding-top:20rpx;'>
+    <view class="wode_item_wrap">
+        <navigator url="/pages/user/erweima/index">
+          <view class="wode_item">
+            亲，快去壮大您的队伍哦！
+            <span class="arrow_wrap">{{total}}</span>
+          </view>
+        </navigator>
+    </view>
+    <scroll-view scroll-y="{{scrollY}}" bindscrolltoupper="prev" bindscrolltolower="next" 
+        class="scroll_view" style="height:{{scrollHeight}}px;padding:20rpx 0;">
+      <view class="page__bd">
+        <view class="weui-grids bgfff">
+          <block wx:for="{{recordList}}">
+            <view url="" class="weui-grid" hover-class="weui-grid_active">
+              <image class="weui-grid__icon" src="{{item.headPhoto}}" />
+              <view class="weui-grid__label">{{item.nickName}}</view>
+            </view>
+          </block>    
+        </view>
+      </view>
+      <view hidden="{{pageCount>=page}}" class="weui-loadmore">
+        <view class="weui-loading" />
+        <view class="weui-loadmore__tips">正在加载...</view>
+      </view>
+      <view wx:if="{{pageCount===page}}" class="weui-loadmore weui-loadmore_line">
+        已经没有更多了-_-
+      </view>
+    </scroll-view>
+   
+   <!-- 分页 -->
+    <view class="paging" >
+      <text decode="{{true}}" class="arrow" bindtap='prevPage'>&lt;</text>
+        <view>
+          第 <text class="pageNumber">{{page}}</text> 页 
+          共 <text class="pageNumber">{{pageCount}}</text> 页
+        </view>
+        <text decode="{{true}}" class="arrow" bindtap='nextPage'>&gt;</text>
+    </view>
+
+  </view>
+</view>

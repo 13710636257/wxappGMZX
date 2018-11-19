@@ -1,0 +1,40 @@
+<view class="page">
+  <view class="page__bd plr10 ptb10">
+    <view class="weui-panel weui-panel_access mt10">
+      <view class="weui-panel__bd" bindtap="switchImg">
+        <image class="quanpic" hidden="{{!headShow}}" src="{{picHead}}" mode="widthFix"></image>
+        <image class="quanpic" hidden="{{!backShow}}" src="{{picBack}}" mode="widthFix"></image>
+      </view>
+    </view>
+    <view class="text-center font-14 col999 mt10">点击图片可以查看优惠券背面哦～</view>
+    <view class="detail mt10 bgfff">
+      <view class="font-16">券号：
+        <text class="col666">{{id}}</text>
+      </view>
+      <view class="font-16">优惠券名称：
+        <text class="col666">{{name}}</text>
+      </view>
+      <view class="font-16">描述说明：
+        <text class="col666">{{description}}</text>
+      </view>
+      <view class="font-16">领取时间：
+        <text class="col666">{{createTime}}</text>
+      </view>
+      <view class="font-16">使用开始时间：
+        <text class="col666">{{startTime}}</text>
+      </view>
+      <view class="font-16">使用结束时间：
+        <text class="col666">{{endTime}}</text>
+      </view>
+      <view class="font-16">使用状态：
+        <text wx:if="{{state == 1}}" class="state bgf25">使用中</text>
+        <text wx:elif="{{state == 2}}" class="state bgccc">已使用</text>
+        <text wx:elif="{{state == 3}}" class="state bgccc">已失效</text>
+        <text class="state bgf25" wx:else>未使用</text>
+      </view>
+    </view>
+	<view hidden="{{!showNoMore}}" class="weui-loadmore weui-loadmore_line">
+        优惠券已经删除了哦～
+    </view>
+  </view>
+</view>

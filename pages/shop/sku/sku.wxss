@@ -1,0 +1,173 @@
+.container-shop {
+  background: #f2f2f2;
+}
+.backTop {
+  position: fixed;
+  bottom: 68px;
+  right: 10px;
+  width: 35px;
+  height: 35px;
+  z-index: 999;
+}
+.backTop image {width: 100%;height: 100%;}
+
+scroll-view {
+ margin-bottom: 20rpx; 
+} 
+
+.goods-content{
+  background: #fff;
+}
+
+.goods-content image {
+  width: 100%;
+}
+
+.footer {
+  background: #fff;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.kefu {
+  padding: 0rpx;
+  border: none;
+  width: 60rpx;
+  height: 60rpx;
+  margin-left: 20rpx;
+ 
+}
+.kefu image {
+  width: 100%;
+  height: 100%;
+}
+.footer_btn {
+  float: right;
+  width: 85%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.footer_btn  .price {
+  padding: 0 15rpx;
+  font-size: 36rpx;
+  color: #F25A88;
+}
+.footer_btn .related-goods {
+  display: flex;align-items: center;
+}
+.footer_btn .zhifu {
+  width: 40%;
+  text-align: center;
+  font-size: 28rpx;
+  background: #F25A88;
+  color: #fff;
+  padding: 0rpx;
+  border-radius:0;
+}
+
+.show-popup{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  z-index: 4;
+}
+.popup-mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+}
+.popup-contents{
+  padding-top: 50rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width:100%;
+  background-color: #fff;
+  z-index: 6;
+}
+.pop-goods-info{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx;
+  border-bottom: 1px solid #eee;
+}
+.info-left {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.pop-img-box{
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 26rpx;
+}
+.pop-img-box .goods-thumbnail{
+  width: 120rpx;
+  height: 120rpx;
+}
+.pop-goods-title{
+  width: 484rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size:26rpx;
+  color:#000000;
+}
+.pop-goods-price{
+  font-size:32rpx;
+  color:#F25A88;
+  margin-top:10rpx; 
+}
+.pop-goods-close{
+  width: 40rpx;
+  height: 40rpx;
+  flex: 1;
+  align-self: flex-start;
+  background:url("https://cdn.gmzx.com/images/weixin/wxApp/popup-close.png") no-repeat center center;
+  background-size: 40rpx auto;
+  position: absolute;
+  right: 15rpx;
+  top:10rpx;
+}
+.checkmore {
+  width: 145rpx;
+  line-height: 55rpx;
+  text-align: center;
+  font-size: 26rpx;
+  border-radius: 8rpx;
+  background: #F25A88;
+  color: #fff;
+}
+
+.address-section { 
+  padding: 5rpx 40rpx;
+  margin-bottom: 90rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.address {
+  font-size: 28rpx;
+  padding-left: 20rpx;
+ 
+}
+.username {
+  font-size: 32rpx;font-weight: 600; padding-right: 20rpx;
+}

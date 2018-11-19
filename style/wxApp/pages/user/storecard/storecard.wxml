@@ -1,0 +1,50 @@
+<!--pages/users/PhoneNumber/phoneNumber.wxml-->
+<import src="../../../wxParse/wxParse.wxml"/> 
+<official-account></official-account>
+<form bindsubmit='formSubmit' bindreset="formReset" report-submit='true'>
+  <view class="login-page">
+    <view class="page-content" >
+      <view class="page-title">{{storeCard.name}}</view>
+        <view class="name-section section">
+           <input class="name" name="name" placeholder="请输入姓名" value="{{wxFans.name}}"/>
+        </view>
+        
+      <view wx:if="{{wxFans.phone}}" class="num-section ">
+          <input class="phone-number" name="phone" placeholder="请绑定手机号码" value="{{wxFans.phone}}"/>
+          <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="phone-btn">
+          更新手机号码</button>  
+      </view>
+      <view wx:else class="num-section">
+        <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="phone-btn">
+        绑定手机号码</button>  
+      </view>
+      
+      <view class="card-section section">
+          <input class="number" name="cardNO" placeholder="请输入卡号" value="{{cardNO}}"/>
+      </view>
+
+      <view class="card-section section" wx:if="{{storeCard.picHead}}">
+        <image src='{{storeCard.picHead}}' data-src="{{storeCard.picHead}}" bindtap="previewImage"></image>
+      </view>
+      <view class="card-section section" wx:if="{{storeCard.picBack}}">
+        <image src='{{storeCard.picBack}}' data-src="{{storeCard.picBack}}" bindtap="previewImage" ></image>
+      </view>
+
+      <view class="info-btn">
+        <button class="btn-submit btn" formType="submit" wx:if="{{!cardNO}}">立即提交</button>
+        <button class="btn-activety btn" bindtap="rulesButton">说明</button>	
+      </view>
+    </view>  
+    <!-- 弹出框 -->
+    <modal 
+      title="{{yuYue.name}}"
+      hidden="{{hiddenModal}}"
+      cancel-text="退出"
+      bindconfirm="rulesConfirm"
+      bindcancel="rulesrCancel">
+      <template is="wxParse" data="{{wxParseData:description.nodes}}" />      
+    </modal>
+
+  </view>
+</form>
+

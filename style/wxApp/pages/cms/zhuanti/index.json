@@ -1,0 +1,34 @@
+{
+  "navigationBarTitleText": "专题",
+  "tabBar": {
+    "selectedColor": "#F5B223",
+    "color": "#9A9A9A",
+    "list": [
+      {
+        "pagePath": "pages/cms/index/index",
+        "text": "首页",
+        "iconPath": "images/shouye1.png",
+        "selectedIconPath": "images/shouye.png"
+      },
+      {
+        "pagePath": "pages/shop/index/index",
+        "text": "商城",
+        "iconPath": "images/shouye1.png",
+        "selectedIconPath": "images/shouye.png"
+      },
+      {
+        "pagePath": "pages/user/wxFans/index",
+        "text": "我",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user_s.png"
+      }
+    ]
+  },
+  "debug": true,
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  }
+}

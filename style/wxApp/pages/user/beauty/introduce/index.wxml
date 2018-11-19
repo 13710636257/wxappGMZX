@@ -1,0 +1,15 @@
+<view class="text-center font-16 mt10">美丽大使介绍</view>
+<view class="font-16 plr10 mb20">
+	<view class="mt10"><text class="weight600">对象：</text>针对所有爱美顾客群体</view>
+	<view class="mt10"><text class="weight600">形式：</text>消费返积分</view>
+	<view class="mt10"><text class="weight600">返积分比例：</text>设定自己为A 介绍的朋友是B </view>
+	<view class="mt10">消费总额去除住院费，杂费，检验费，麻醉费，药费后A.B各返10%。</view>
+	<view class="mt10">A消费本人积分10%，B无积分</view>
+	<view class="mt10">A介绍朋友B消费，A.B各返10%</view>
+	<view class="mt10"><text class="weight600">积分权益：</text>积分累积，下级终身制，不返现，不清零，不转让，不继承，抵用广美整形任何消费。</view>
+	<view class="mt10"><text class="weight600">积分使用：</text>每积分1分抵用项目消费1元钱。</view>
+	<view class="mt10">单次消费广美任何项目，消费额50%可用积分抵用。例如：顾客A有10万积分，今天做一个1万元的美鼻项目，顾客可用5000的积分抵用，交现金5000就可以了。顾客A的积分使用后为95500</view>
+	<view class="mt10"><text class="weight600">美丽大使介绍报备制度：</text>认同广美整形品牌，愿意口碑传播广美整形品牌的爱美者，可申请做广美集团的美丽大使。美丽大使介绍朋友，需要提前平台报备。报备有效期为30天。（如已提前报备的朋友B，报备有效期间又有其他朋友陪同B来院协助成交的，积分所属为陪同来院者。注明前期报备无效，以亲自陪同者为准。）</view>
+	<view class="mt10"><text class="weight600">特殊情况：</text>如发生赔退款，按比例扣除相对应积分。</view>
+	<view class="mt10">最终解释权归广美整形集团所有。</view>
+</view>

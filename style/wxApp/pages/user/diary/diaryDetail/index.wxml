@@ -1,0 +1,47 @@
+<import src="../../../../wxParse/wxParse.wxml"/>
+<view class="page">
+  <view class="section">
+	<block hidden="{{showNoMore}}">
+		<view class="weui-cells weui-cells_after-title mb10">
+			<view class="weui-cell" style="padding-bottom: 10rpx;">
+				<view class="weui-cell__hd" style="margin-right: 10px;">
+					<image src="http://www.gmzx.com/upload/image/20170113/1484297093035016075.jpg" style="width: 50px; height: 50px; display: block; border-radius:50%;"/>
+				</view>
+				<view class="weui-cell__bd">
+					<view>{{name}}</view>
+					<view style="font-size: 13px;color: #888888;">{{sex}} {{city}}</view>
+				</view>
+			</view>
+			<view class="pb10" style="padding-left:15px;padding-right:15px;">
+				<text class="item">{{item}}</text>
+			</view>
+		</view>
+		
+		<view class="user-diary">
+		  <view class="diary-info">
+			<view class="diary-all">术前照片（发布于{{time}}）</view>
+			<view class="diary-img">
+			  <image src="{{duibiImg1}}" bindtap="imgBig" data-src="{{duibiImg1}}" mode="aspectFit"></image>
+			  <image src="{{duibiImg2}}" bindtap="imgBig" data-src="{{duibiImg2}}" mode="aspectFit"></image>
+			  <image src="{{duibiImg3}}" bindtap="imgBig" data-src="{{duibiImg3}}" mode="aspectFit"></image>
+			</view>
+			<view class="diary-all">{{hospital}}
+			  <text class="colF25">￥{{price}}</text>
+			</view>
+		  </view>
+		</view>
+		<view class="user-diary">
+		  <view class="diary-info pt10">
+			<text class="item" style="font-size:36rpx;">术后15天</text>
+      <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+      <rich-text nodes="{{content1}}"></rich-text>
+		  </view>
+		</view>
+	</block>
+  <navigator class="diary-add" url="/pages/user/diary/diarySaveUi/index">添加</navigator>
+    <view hidden="{{!showNoMore}}" class="weui-loadmore weui-loadmore_line">
+		该文章已经删除了-_-
+    </view>
+	
+  </view>
+</view>

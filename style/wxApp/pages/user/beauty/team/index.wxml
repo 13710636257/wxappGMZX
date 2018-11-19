@@ -1,0 +1,20 @@
+<view class="page">
+  <view class="page__bd page__bd_spacing bgfff" style="padding:0 20rpx;">
+  <view wx:if="{{teamListLength == 0}}">推荐的人为空哦</view>
+    <block wx:for="{{teamList.rows}}">
+      <view class="weui-flex bor-bot ptb10 col666 font-14">
+        <view class="weui-flex__item">卡号：{{item.card}}，信息：{{item.name}} {{item.phone}}</view>
+        <view class="weui-flex__item text-right">
+          {{item.time}}
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <view class="weui-flex bor-bot ptb10 col666 bgfff mt10">
+    <view class="weui-flex__item text-center">上一页</view>
+    <view class="weui-flex__item text-center">下一页</view>
+  </view>
+
+
+</view>

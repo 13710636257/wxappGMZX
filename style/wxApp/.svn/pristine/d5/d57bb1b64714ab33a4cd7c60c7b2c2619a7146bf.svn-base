@@ -1,0 +1,68 @@
+<!--pages/users/PhoneNumber/phoneNumber.wxml-->
+<import src="../../../wxParse/wxParse.wxml"/> 
+<official-account></official-account>
+<form bindsubmit='formSubmit' bindreset="formReset" report-submit='true'>
+  <view class="login-page">
+    <view class="page-content" >
+      <view class="page-title">{{yuYue.name}}</view>
+        <view class="name-section section">
+           <input class="name" name="name" placeholder="请输入姓名" value="{{wxFans.name}}"/>
+        </view>
+        
+      <view wx:if="{{wxFans.phone}}" class="num-section ">
+          <input class="phone-number" name="phone" placeholder="请绑定手机号码" value="{{wxFans.phone}}"/>
+          <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="phone-btn">
+          更新手机号码</button>  
+      </view>
+      <view wx:else class="num-section">
+        <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="phone-btn">
+        绑定手机号码</button>  
+      </view>
+      
+      <view class="card-section section">
+          <input class="number" name="cardNO" placeholder="请输入卡号" value="{{cardNO}}"/>
+      </view>
+
+      <!-- 选择医院 -->
+      <view class="address-section section">
+           <view class="weui-cell weui-cell_select" style='border-bottom: 1rpx solid #eee;'>
+                <view class="weui-cell__hd weui-cell__hd_in-select-after" 
+                style='padding-left:0;'>
+                    <view class="weui-label" style='color: #676767;'>选择医院</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindAddressyChange" value="{{addresses[addressIndex].alias}}" 
+                          range="{{addresses}}" range-key="name">
+                      <view class="weui-select weui-select_in-select-after" 
+                      style='border-right:none;color: #676767;'>{{addresses[addressIndex].name}}</view>
+                    </picker>
+                </view>
+            </view>
+       </view>
+       
+      <view class="time-section section">       
+        <picker mode="date" value="{{yuyueTime}}" start="{{nowDate}}" 
+          bindchange="bindDateChange"  style='border-bottom: 1rpx solid #eee;'>
+          <view class="picker" style='color: #676767;'>
+            预约时间：{{yuyueTime}}
+          </view>
+        </picker>
+      </view>
+      <view class="info-btn">
+        <button class="btn-submit btn" formType="submit">立即提交</button>
+        <button class="btn-activety btn" bindtap="rulesButton">活动说明</button>	
+      </view>
+    </view>  
+    <!-- 弹出框 -->
+    <modal 
+      title="{{yuYue.name}}"
+      hidden="{{hiddenModal}}"
+      cancel-text="退出"
+      bindconfirm="rulesConfirm"
+      bindcancel="rulesrCancel">
+      <template is="wxParse" data="{{wxParseData:description.nodes}}" />      
+    </modal>
+
+  </view>
+</form>
+

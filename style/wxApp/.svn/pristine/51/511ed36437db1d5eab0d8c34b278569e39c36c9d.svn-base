@@ -1,0 +1,33 @@
+<view class="page">
+  <view class="section">
+    <scroll-view scroll-y="true" bindscrolltoupper="refresh" bindscrolltolower="loadMore" class="scroll_view" style="height:{{scrollHeight}}rpx">
+      <view class="page__bd">
+        <view class="weui-grids bgfff">
+          <block wx:for="{{list}}">
+            <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+              <image class="weui-grid__icon" src="{{item.image}}" />
+              <view class="weui-grid__label">{{item.name}}</view>
+            </navigator>
+          </block>
+        </view>
+      </view>
+
+      <view class="wode_item_wrap" hidden="{{!showlist}}">
+        <navigator url="/pages/user/erweima/index">
+          <view class="wode_item">
+            亲，快去壮大您的队伍哦！
+            <span class="arrow_wrap iconfont icon-right"></span>
+          </view>
+        </navigator>
+      </view>
+
+      <view hidden="{{!showLoadMore}}" class="weui-loadmore">
+        <view class="weui-loading" />
+        <view class="weui-loadmore__tips">正在加载...</view>
+      </view>
+      <view hidden="{{!showNoMore}}" class="weui-loadmore weui-loadmore_line">
+        已经没有更多了-_-
+      </view>
+    </scroll-view>
+  </view>
+</view>

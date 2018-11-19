@@ -1,0 +1,101 @@
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="page__bd">
+        <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{showTopTips}}</view>
+		<form bindsubmit="goDetail" > 
+			
+			<view class="section bor-bot">
+			  <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+				<view class="picker">
+				  记录日期：{{date}}
+				</view>
+			  </picker>
+			</view>	
+			
+			<view class="section bor-bot">
+			  <picker bindchange="bindPickerChange" value="{{index}}" range="{{hospital}}">
+				<view class="picker">
+				  医院：{{hospital[index]}}
+				</view>
+			  </picker>
+			</view>
+			
+			<view class="section bor-bot">
+				<view class="picker">
+					<text style="width:200rpx">价格：</text><input class="fr" style="width:550rpx" type="digit"/>
+				</view>
+			</view>	
+			
+			<view class="section bor-bot">
+				<view class="picker">
+					选择你做过的项目：
+					<checkbox-group style="margin-top:20rpx;" bindchange="checkboxChange">
+					  <label class="checkbox" wx:for="{{xm}}" style="margin-right:20rpx;">
+						<checkbox value="{{item.name}}"/>{{item.value}}
+					  </label>
+					</checkbox-group>
+				</view>
+			</view>
+			<view class="section bor-bot">
+				<view class="picker">
+					<view>术前照片：
+						<block wx:if="{{tempFilePath1 != '' || tempFilePath2 != '' || tempFilePath3 != '' || savedFilePath1 !='' || savedFilePath2 !='' || savedFilePath3 !=''}}">
+							<button class="weui-btn mini-btn fr colfff bgf25" size="mini" bindtap="clear">删除</button>
+						</block>
+					</view>
+					<view class="page-body">
+						<view class="page-body-wrapper">
+						  <view class="page-body-info">
+							<block wx:if="{{tempFilePath1 != ''}}">
+							  <image src="{{tempFilePath1}}" class="image" mode="aspectFit"></image>
+							</block>
+							<block wx:if="{{tempFilePath1 === '' && savedFilePath1 != ''}}">
+							  <image src="{{savedFilePath1}}" class="image" mode="aspectFit"></image>
+							</block>
+							<block wx:if="{{tempFilePath1 === '' && savedFilePath1 === ''}}">
+							  <view class="image-plus" bindtap="chooseImage1">
+								<view class="image-plus-horizontal"></view>
+								<view class="image-plus-vertical"></view>
+							  </view>
+							</block>
+							<view class="text-center col999 font-14 mt10">正面</view>
+						  </view>
+						  <view class="page-body-info">
+							<block wx:if="{{tempFilePath2 != ''}}">
+							  <image src="{{tempFilePath2}}" class="image" mode="aspectFit"></image>
+							</block>
+							<block wx:if="{{tempFilePath2 === '' && savedFilePath2 != ''}}">
+							  <image src="{{savedFilePath2}}" class="image" mode="aspectFit"></image>
+							</block>
+							<block wx:if="{{tempFilePath2 === '' && savedFilePath2 === ''}}">
+							  <view class="image-plus" bindtap="chooseImage2">
+								<view class="image-plus-horizontal"></view>
+								<view class="image-plus-vertical"></view>
+							  </view>
+							</block>
+							<view class="text-center col999 font-14 mt10">侧面45°</view>
+						  </view>
+						  <view class="page-body-info">
+							<block wx:if="{{tempFilePath3 != ''}}">
+							  <image src="{{tempFilePath3}}" class="image" mode="aspectFit"></image>
+							</block>
+							<block wx:if="{{tempFilePath3 === '' && savedFilePath3 != ''}}">
+							  <image src="{{savedFilePath3}}" class="image" mode="aspectFit"></image>
+							</block>
+							<block wx:if="{{tempFilePath3 === '' && savedFilePath3 === ''}}">
+							  <view class="image-plus" bindtap="chooseImage3">
+								<view class="image-plus-horizontal"></view>
+								<view class="image-plus-vertical"></view>
+							  </view>
+							</block>
+							<view class="text-center col999 font-14 mt10">侧面</view>
+						  </view>
+						</view>
+					</view>			  
+				</view>
+			</view>	
+			<view class="weui-btn-area">
+				<button class="weui-btn" type="primary" form-type="submit">提交</button>
+			</view>
+		</form> 
+	</view>
+</view>

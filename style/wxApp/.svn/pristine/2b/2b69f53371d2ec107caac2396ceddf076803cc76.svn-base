@@ -1,0 +1,47 @@
+<view class="personal_info">
+  <view class="photo_wrap">
+    <image src="{{userInfo.avatarUrl}}" class="photo"></image>
+  </view>
+  <view class="nickname">
+    {{userInfo.nickName}}
+  </view>
+  <view class="order-class">
+    <navigator class="item-order" url="">
+      <view class=" iconfont icon-integral"></view>
+      <text class="item--order-text">我的积分</text>
+    </navigator>
+    <navigator class="item-order" url="">
+      <view class="iconfont icon-report"></view>
+      <text class="item--order-text">报备推荐</text>
+    </navigator>
+    <navigator class="item-order" url="">
+      <view class="iconfont icon-team"></view>
+      <text class="item--order-text">我的团队</text>
+    </navigator>
+    <navigator class="item-order" url="">
+      <view class="iconfont icon-cart"></view>
+      <text class="item--order-text">购物车</text>
+    </navigator>
+  </view>
+</view>
+
+<!-- article start -->
+<view class="user-article">
+  <navigator url="/pages/user/order/index">
+    <view class="user-order">
+      <text class="order-all">全部订单</text>
+      <view class="order-look">
+        <view class="iconfont icon-right"></view>
+      </view>
+    </view>
+  </navigator>
+</view>
+<view class="wode_item_wrap">
+  <navigator wx:for="{{mode}}" url="{{item.url}}">
+    <view class="wode_item">
+      {{item.name}}
+      <span class="arrow_wrap iconfont icon-right"></span> 
+    </view>
+  </navigator>
+</view>
+<view class="wode_out">退出</view>

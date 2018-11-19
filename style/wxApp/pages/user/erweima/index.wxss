@@ -1,0 +1,38 @@
+.main {
+    background: url(http://static.gmzx.com/images/weixin/wxMingPian/wxMingPian.jpg);
+    background-size: 100% 100%;
+	position:relative;
+}
+.gmlogo{
+	position:absolute;
+	left:40rpx;
+	top:40rpx;
+	width:300rpx;
+	height:100rpx;
+}
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 180rpx;
+  height: 180rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+.erweima{
+  margin-top: 30rpx;
+	width:400rpx;
+	height:400rpx;
+}

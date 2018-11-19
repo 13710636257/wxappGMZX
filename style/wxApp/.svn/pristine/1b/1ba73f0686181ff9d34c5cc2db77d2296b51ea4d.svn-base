@@ -1,0 +1,10 @@
+var baseUrl = 'https://wx.gmzx.com/wxApp';
+var config = {
+  APPID:'wx919e58ff229df64c',  //广美服务号关联的小程序
+  APPSECRET:'',
+  HTTP_BASE_URL:baseUrl,
+  HTTP_INDEX_NAV_URL: "/index/navTop.json",
+  HTTP_INDEX_NAV_ITEMS_URL: "/index/navItems.json",
+}
+
+module.exports = config;

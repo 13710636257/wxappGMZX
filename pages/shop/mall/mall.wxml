@@ -1,0 +1,49 @@
+<!--pages/shop/mall/mall.wxml-->
+<view class="mall-contain">
+    <!-- 轮播广告图 -->
+ <view class='mall-banner'>
+    <swiper class="banner" indicator-dots="{{navTop.indicatorDots}}" autoplay="{{navTop.autoplay}}" 
+          interval="{{navTop.interval}}" duration="{{navTop.duration}}"
+          indicator-color="{{navTop.indicatorColor}}"
+          indicator-active-color="{{navTop.indicatorActiveColor}}">
+      <block wx:for="{{navTop.imgUrls}}">
+        <swiper-item>
+          <navigator url="../detail/index?id={{item.src}}">
+            <view class="banner">
+              <image mode="widthFix" src="{{item.src}}"></image>
+            </view>
+          </navigator>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="jingxuan-section">
+    <view class="title">精选限时优惠</view>
+    <swiper class="project" display-multiple-items="4"> 
+        <swiper-item wx:for="{{mallProjects.projectArray}}">
+          <navigator url="../../webview/webview?url={{item.url}}" class="project-classify">
+            <image src="{{item.projectImg}}"></image>
+              <rich-text name="h3" class="card-title">{{item.projecTitle}}</rich-text>
+              <rich-text name="b" class="price">{{item.price}}</rich-text>
+              <view class="buybtn">抢购</view>
+          </navigator>
+        </swiper-item>
+    </swiper>
+  </view>
+  <view class="project-list" wx:for="{{mallProjects.projectList}}">
+    <view class="heightfull"></view>
+      <navigator url="../detail/index?id={{item.src}}" class="list-content">
+          <view class="left">
+            <image src="{{item.projectImg}}" class="project-img"></image>
+          </view>
+          <view class="right">
+            <view class="right-desc">
+              {{item.desc}}
+            </view>
+            <rich-text name="b" class="price">{{item.price}}</rich-text>
+          </view>
+    </navigator>
+  </view> 
+
+
+</view>

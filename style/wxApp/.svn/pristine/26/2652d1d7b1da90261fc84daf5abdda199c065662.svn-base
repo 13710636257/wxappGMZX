@@ -1,0 +1,84 @@
+{
+  "pages": [
+    "pages/cms/index/index",
+    "pages/user/order/index",
+    "pages/user/myTeam/index",    
+    "pages/user/yuYue/yuYue",
+    "pages/user/storecard/storecard",
+    "pages/user/appointment/appointment/appointment",
+    "pages/shop/congzhi/congzhi",        
+    "pages/user/wxFans/index",
+    "pages/shop/detail/index",
+    "pages/shop/sku/sku",
+    "pages/shop/index/index",
+    "pages/cms/article/index",
+    "pages/cms/category/index",
+    "pages/cms/zhuanti/index",
+    "pages/shop/shoppingcar/index",
+    "pages/shop/pay/pay",
+    "pages/user/appointment/appointmentList/appointmentList",
+    "pages/user/diary/diaryBookList/index",
+    "pages/user/diary/diaryBookSaveUi/index",
+    "pages/user/diary/diarySaveUi/index",
+    "pages/user/diary/diaryDetail/index",
+    "pages/user/quan/quanList/quanList",
+    "pages/user/quan/quanDetail/quanDetail",
+    "pages/user/erweima/index",
+    "pages/user/orderDetails/index",
+    "pages/user/information/index",
+    "pages/user/setPwd/index",
+    "pages/user/address/index",
+    "pages/user/beauty/index",
+    "pages/user/beauty/baoBeiList/index",
+    "pages/user/beauty/baoBeiUi/index",
+    "pages/user/beauty/cashList/index",
+    "pages/user/beauty/editPwd/index",
+    "pages/user/beauty/introduce/index",
+    "pages/user/beauty/score/index",
+    "pages/user/beauty/team/index",
+    "pages/webview/webview",
+    "pages/logs/logs",
+    "pages/shop/mall/mall",
+    "pages/user/login/login"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#d2235a",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "广美整形",
+    "backgroundColor": "#fff",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true,
+    "disableScroll": false
+  },
+  "tabBar": {
+    "selectedColor": "#d2235a",
+    "color": "#9A9A9A",
+    "list": [
+      {
+        "pagePath": "pages/cms/index/index",
+        "text": "首页",
+        "iconPath": "images/home/home-icon.png",
+        "selectedIconPath": "images/home/select-home.png"
+      },
+      {
+        "pagePath": "pages/shop/index/index",
+        "text": "商城",
+        "iconPath": "images/home/mall-icon.png",
+        "selectedIconPath": "images/home/select-mall.png"
+      },
+      {
+        "pagePath": "pages/user/wxFans/index",
+        "text": "我",
+        "iconPath": "images/home/my-icon.png",
+        "selectedIconPath": "images/home/select-my.png"
+      }
+    ]
+  },
+  "debug": true,
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  }
+}

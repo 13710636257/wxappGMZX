@@ -1,0 +1,9 @@
+.item-label{
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:flex;
+	width:100%;
+}
+.weui-cells{
+	font-size:34rpx;
+}

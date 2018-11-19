@@ -1,0 +1,60 @@
+<import src="../../../wxParse/wxParse.wxml"/>
+<official-account></official-account>
+<view class="container-shop">
+  <scroll-view scroll-Y="true" scroll-X="false">
+    <!-- 回到顶部 -->
+    <view class="backTop" bindtap='backTop' wx:if="{{backTopValue ==true}}">
+      <image src="https://static.gmzx.com/images/phone/common/backtop.png"></image>
+    </view>
+    <!-- 详情 -->
+    <view class="goods-content">
+      <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+   </view>
+  </scroll-view>
+
+  <!-- 收获地址 -->
+<view class="address-section" wx:if="{{addressInfo}}">        
+    <view class="address">
+        <view>
+          <text class="username"> {{addressInfo.userName}}</text>
+          <text class="phonenumber">{{addressInfo.telNumber}}</text>
+        </view>
+        <view>{{addressInfo.provinceName}}{{addressInfo.cityName}}{{addressInfo.countyName}}{{addressInfo.detailInfo}}                  </view>
+    </view>
+  </view>
+
+
+  <view class="footer">
+      <button class="kefu" bindtap='swtOpen'>
+          <image src="https://static.gmzx.com/images/weixin/logo/kefu.png"></image>
+     </button>
+    <view class="footer_btn">
+      <view class='related-goods' bindtap="addshopcar" wx:if="{{productSkus.length>0}}">
+        <view class="iconfont icon-caidan" style='font-size:24px;'></view>
+        相关商品
+      </view>
+      <text class="price">￥{{sale.payMoney}}元</text>
+      <view class="zhifu" bindtap='pay'>立即支付</view>
+    </view>
+  </view>
+<!-- 相关商品弹框 -->
+  <view class="show-popup" hidden="{{hideShopPopup}}">
+    <view class="popup-mask" bindtap="closeSkuTap"></view>
+    <view class="popup-contents">
+    <!-- 关闭按钮 -->
+      <view class="pop-goods-close" bindtap="closeSkuTap"></view>
+      <view class="pop-goods-info" wx:for="{{productSkus}}" wx:key="index">
+        <view class="info-left">
+            <view class="pop-img-box">
+              <image src="{{item.shareImgUrl}}" class="goods-thumbnail" />
+            </view>
+            <view class="pop-goods-des">
+              <view class="pop-goods-title">{{item.title}}</view>
+              <view class="pop-goods-price">¥ {{item.price}}</view>
+            </view>
+        </view>
+        <navigator url='/pages/shop/sku/sku?alias={{item.alias}}' class="checkmore">查看</navigator>
+      </view>      
+    </view>
+  </view>
+</view>

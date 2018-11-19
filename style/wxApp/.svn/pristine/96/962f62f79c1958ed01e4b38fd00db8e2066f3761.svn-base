@@ -1,0 +1,53 @@
+.personal_info {
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid rgb(216, 216, 216);
+  margin-bottom: 10px;
+}
+
+.photo_wrap {
+  text-align: center;
+}
+
+.photo {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+}
+
+.nickname {
+  margin-top: 15rpx;
+  text-align: center;
+}
+
+.wode_item_wrap {
+  background-color: #fff;
+  font-size: 28rpx;
+  margin-top: 10px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.wode_item {
+  height: 88rpx;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0 10px;
+  line-height: 88rpx;
+  position: relative;
+  color: rgb(102, 102, 102);
+}
+.arrow_wrap {
+  position: absolute;
+  width: 50px;
+  height: 88rpx;
+  right: 0;
+  top: 0;
+}
+.wode_out {
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  background-color: #fff;
+  margin-top: 10px;
+  font-size:28rpx;
+  border-bottom: 1px solid #e5e5e5;
+  border-top: 1px solid #e5e5e5;
+}

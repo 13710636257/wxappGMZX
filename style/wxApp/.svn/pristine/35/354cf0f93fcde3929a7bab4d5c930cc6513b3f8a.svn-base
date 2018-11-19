@@ -1,0 +1,29 @@
+var app = getApp();
+
+Page({
+  	data: {
+  		userInfo: {},
+       mode:[
+              {'name':'完善信息','url':'gmzx.com'},
+              {'name':'收货地址','url':'gmzx.com'},
+              {'name':'我的二维码','url':'gmzx.com'},
+              {'name':'在线咨询','url':'gmzx.com'},
+              {'name':'关于我们','url':'gmzx.com'},
+              {'name':'意见反馈','url':'gmzx.com'}
+            ]
+  	},
+  	onLoad: function() {
+  		var that = this;
+  		wx.login({
+        success: function () {
+          wx.getUserInfo({
+            success: function (res) {
+              that.setData({
+                userInfo: res.userInfo
+              })
+            }
+          })
+        }
+      });
+  	}
+})

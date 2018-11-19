@@ -1,0 +1,156 @@
+.swiper-item{
+  display: block;
+}
+.slide-image {
+  width: 100%;
+}
+.banner {
+  width: 100%;
+  height: 478rpx;
+}
+.clear{
+  float: none;
+}
+.category {
+  background-color: #FFF;
+  margin-bottom: 10px;
+  display: flex;
+  flex: content;
+  flex-wrap: wrap;
+}
+.category_item {
+  width: 25%;
+  margin: 10px 0;
+}
+.icon_wrap {
+  width: 40px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+}
+.index_icon {
+  width: 40px;
+  height: 40px;
+}
+.category_item_text {
+  text-align: center;
+  font-size: 13px;
+  color: #737373;
+}
+.singal_item {
+  text-align: center;
+  background-color: #FFF;
+  margin-bottom: 10px;
+}
+.singal_item_title {
+  padding: 12px;
+  font-size: 16px;
+}
+.singal_item_image {
+  line-height: 0;
+}
+.commen_title {
+  padding: 10px;
+  background-color: #fff;
+  font-size: 16px;
+  border-bottom: 1px solid #E9E9E9;
+}
+.single_goods_image {
+  width: 80px;
+  height: 80px;
+}
+.single_goods {
+  position: relative;
+  height: 100px;
+  background-color: #FFF;
+  padding-left: 100px;
+  border-bottom: 1px solid #E7E7EB;
+}
+.single_image_wrap {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.single_goods_infor {
+  padding: 10px 0;
+  position: relative;
+  height: 80px;
+}
+.single_goods_name {
+  font-size: 14px;
+}
+.single_goods_price {
+  font-size: 14px;
+  color: #FF1493;
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  width: 100%;
+  height: 22px;
+  line-height: 22px;
+}
+.single_goods_address {
+  color: #929292;
+  font-size: 12px;
+}
+.carImgWrap {
+  float: right;
+  margin-right: 15px;
+}
+.carImg {
+  width: 20px;
+  height: 20px;
+}
+/*首页分类下第一个板块banner样式*/
+.bann_list1 {
+    float: left;
+    height:410rpx;
+    width: 50%;
+    padding-right: 1px;
+    box-sizing: border-box;
+    display: block;
+    
+}
+.bann_list1 image,bann_list1_2 image{
+    width: 100%;
+    height: 100%;
+    padding-right: 1px;
+    box-sizing: border-box;
+}
+.bann_list1_1{
+  height: 400rpx;
+}
+.bann_list1_2{
+  height: 200rpx;
+}
+/*名媛案例*/
+.mingyuan_swiper{
+  height: 900rpx;
+}
+.mingyuan_swiper image{
+  position: relative;
+  height: 715rpx;
+}
+.mingyuan_swiper text{
+  margin-top:100px; 
+  padding: 20px;
+  font-size: 14px;
+}
+.foot_pinpai{
+    padding: 10px 0;
+    background: #000;
+    height: 110rpx;
+    display: flex; 
+    justify-content:space-around;
+  }
+
+.foot_pinpai navigator{
+  width: 21%;
+  border: #989898 3px solid;
+  background: #fff;
+  display: flex;
+  flex-direction:column; 
+  align-items: center;
+  justify-content:space-around;
+}
+.foot_pinpai navigator image{width: 35%;margin-top: 10rpx;height: 50rpx;}
+.foot_pinpai navigator text{font-size: 30rpx}

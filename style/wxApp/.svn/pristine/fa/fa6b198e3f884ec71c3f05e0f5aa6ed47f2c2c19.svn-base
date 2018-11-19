@@ -1,0 +1,88 @@
+var WxAutoImage = require('../../utils/wxAutoImageCal.js');
+var config = require('../../config.js')
+var http = require('../../utils/httpHelper.js')
+
+var app = getApp();
+
+Page({   
+    onLoad: function () {
+      var that = this;
+      http.httpGet(config.HTTP_INDEX_NAV_URL,{},function (res) {
+          console.info(res);
+          var navTop = res.obj;
+          that.setData({ "navTop": navTop });
+        }
+      ) 
+    },
+    data: {      
+        navTop:{}, 
+        iconArray: [
+            {
+                "iconUrl": 'http://static.gmzx.com/images/phone/index/meilian.png',
+                "iconText": '美脸'
+            },
+            {
+              "iconUrl": 'http://static.gmzx.com/images/phone/index/meiyan.png',
+                "iconText": '美眼'
+            },
+            {
+                "iconUrl": 'http://static.gmzx.com/images/phone/index/meibi.png',
+                "iconText": '美鼻'
+            },
+            {
+                "iconUrl": 'http://static.gmzx.com/images/phone/index/meifu.png',
+                "iconText": '美肤'
+            },
+            {
+                "iconUrl": 'http://static.gmzx.com/images/phone/index/quban.png',
+                "iconText": '祛斑'
+            },
+            {     
+                "iconUrl": 'http://static.gmzx.com/images/phone/index/kangshuailao.png',
+                "iconText": '抗衰'
+            },
+            {
+                "iconUrl": 'http://static.gmzx.com/images/phone/index/tuomao.png',
+                "iconText": '脱毛'
+            },
+            {
+                "iconUrl": 'http://static.gmzx.com/images/phone/index/boniaosuan.png',
+                "iconText": '玻尿酸'
+            },
+            {
+                "iconUrl": 'http://static.gmzx.com/images/phone/index/roudusu.png',
+                "iconText": '瘦脸针'
+            },
+            {
+                "iconUrl": 'http://static.gmzx.com/images/phone/index/roudusu.png',
+                "iconText": '水光针'
+            },
+            {
+                "iconUrl": 'http://static.gmzx.com/images/phone/index/remaji.png',
+                "iconText": '热玛吉'
+            },
+            {
+                "iconUrl": 'http://static.gmzx.com/images/phone/index/kaiyanjiao.png',
+                "iconText": '开眼角'
+            }
+        ],
+        itemArray: [
+            {
+                "itemUrl": '../../images/huaju.jpeg',
+                "itemText": '11月20日话剧《风声》'
+            },
+            {
+                "itemUrl": '../../images/huaju.jpeg',
+                "itemText": '11月20日话剧《原野》'
+            },
+            {
+                "itemUrl": '../../images/huaju.jpeg',
+                "itemText": '11月28日“夜店”演唱会'
+            },
+        ]
+    },
+    cusImageLoad: function(e){
+        var that = this;
+        that.setData(WxAutoImage.wxAutoImageCal(e));
+    }
+})

@@ -1,0 +1,35 @@
+var app = getApp();
+
+Page({
+  data: {
+    userInfo: {},
+    mode: [
+      { 'name': '每日签到', 'url': 'gmzx.com' },
+      { 'name': '完善信息', 'url': '/pages/user/information/index' },
+      { 'name': '设置密码', 'url': '/pages/user/setPwd/index' },
+      { 'name': '收货地址', 'url': '/pages/user/address/index' },
+      { 'name': '我的日记本', 'url': '/pages/user/diary/diaryBookList/index' },
+      { 'name': '我的二维码', 'url': '/pages/user/erweima/index' },
+      { 'name': '我的优惠券', 'url': '/pages/user/quan/quanList/quanList' },
+      { 'name': '客服电话', 'url': 'gmzx.com' },
+      { 'name': '在线咨询', 'url': 'gmzx.com' },
+      { 'name': '我的预约', 'url': '/pages/user/appointment/appointment/appointment' },
+      { 'name': '医院位置', 'url': 'gmzx.com' },
+      { 'name': '清除缓存', 'url': 'gmzx.com' }
+    ]
+  },
+  onLoad: function () {
+    var that = this;
+    wx.login({
+      success: function () {
+        wx.getUserInfo({
+          success: function (res) {
+            that.setData({
+              userInfo: res.userInfo
+            })
+          }
+        })
+      }
+    });
+  }
+})

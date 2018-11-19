@@ -1,0 +1,10 @@
+<template name='itemIconTemplate'>
+  <view class="category_item_wrap">
+    <view class="icon_wrap">
+      <image src="{{iconUrl}}" class="index_icon"></image>
+    </view>
+    <view class="category_item_text">
+      <text>{{iconText}}</text>
+    </view>
+  </view>
+</template>

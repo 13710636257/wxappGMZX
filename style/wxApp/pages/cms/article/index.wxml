@@ -1,0 +1,32 @@
+<import src="../../../wxParse/wxParse.wxml" />
+<view style="padding:10px;" >
+  <text>{{articleContent.title}}</text>
+  <view class="edit">
+    <text>{{articleContent.creatTime}}</text>
+    <text>{{articleContent.editor}}</text>
+  </view>
+  <view class="wxParse">
+    <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+  </view>
+  <view class="zixun">
+    <image mode="aspectFit" alt="电话咨询" src="http://static.gmzx.com/images/phone/article/phone_zixun.jpg"></image>
+    <image mode="aspectFit" alt="立即咨询" src="http://static.gmzx.com/images/phone/article/swt_zixun.jpg"></image>
+  </view>
+  <view class="relevant">
+    <navigator class="prev">上一篇：电话咨询</navigator>
+    <navigator class="next">下一篇：电话咨询</navigator>
+  </view>
+  <view class="anli"> 
+    <text class="anli_title">相关案例</text>
+    <navigator><text>姓名:许晓静</text><text>职业:模特</text></navigator>
+    <navigator><text>姓名：潘翠娟&</text><text>职业：投资顾问</text></navigator>
+    <navigator><text>姓名：谭雪玲</text><text>职业：创业女</text></navigator>
+    <navigator><text>姓名：将泽琳</text><text>职业：财务</text></navigator>
+    <navigator><text>姓名：李郑玉</text><text>职业：大学生</text></navigator>
+    <navigator><text>姓名：李迪</text><text>职业：教师</text></navigator>
+    <navigator><text>姓名：杨惠雯</text><text>职业：广美护士</text></navigator>
+    <navigator><text>姓名：许雅妍</text><text>职业：教师</text></navigator>
+    <navigator><text>姓名：徐丽</text><text>职业：舞蹈演员</text></navigator>
+    <navigator><text>姓名：张语航</text><text>职业：企业家</text></navigator>
+  </view>
+</view>

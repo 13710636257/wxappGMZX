@@ -1,0 +1,43 @@
+//index.js
+var config = require('../../../config.js')
+var http = require('../../../utils/httpHelper.js')
+var sta = require("../../../utils/statistics.js");
+//获取应用实例
+var app = getApp();
+Page({
+  onLoad: function (options) {
+    var that=this;
+    http.httpGet(config.HTTP_SHOP_INDEX_NAV_URL, {}, function (res) {
+      console.info(res);
+      var navTop = res.obj;
+      that.setData({ "navTop": navTop });
+    }
+    ) 
+    http.httpGet(config.HTTP_SHOP_INDEX_LIST1_URL, {}, function (res) {
+      var productList1 = res.obj;
+      console.info(productList1);
+      that.setData({ "productList1": productList1 });
+    }
+    ) 
+    http.httpGet(config.HTTP_SHOP_INDEX_LIST2_URL, {}, function (res) {
+      var productList2 = res.obj;
+      console.info(productList2);
+      that.setData({ "productList2": productList2 });
+    }
+    ) 
+    http.httpGet(config.HTTP_SHOP_INDEX_LIST3_URL, {}, function (res) {
+      var productList3 = res.obj;
+      console.info(productList3);
+      that.setData({ "productList3": productList3 });
+    }
+    ) 
+
+  },
+  data: {
+    productList1:{},
+    productList2: {},
+    productList3: {},
+    navTop:{}
+  }
+
+})

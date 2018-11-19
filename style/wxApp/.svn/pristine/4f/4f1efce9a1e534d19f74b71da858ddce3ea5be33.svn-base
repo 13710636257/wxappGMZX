@@ -1,0 +1,77 @@
+<view>
+  <swiper class="banner" indicator-dots="{{navTop.indicatorDots}}" 
+    autoplay="{{navTop.autoplay}}" interval="{{navTop.interval}}" duration="{{navTop.duration}}">
+    <block wx:for="{{navTop.imgUrls}}">
+      <swiper-item>
+        <navigator url="../zhuanti/index?id={{item.src}}"><image src="{{item.src}}" class="slide-image" /></navigator>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class="category">
+  <view class="category_item" wx:for="{{iconItems.iconArray}}">
+  <navigator url="../zhuanti/index?id={{item.id}}">
+    <view class="category_item_wrap">
+      <view class="icon_wrap">
+        <image src="{{item.iconUrl}}" class="index_icon"></image>
+      </view>
+      <view class="category_item_text">
+        <text>{{item.iconText}}</text>
+      </view>
+    </view>
+    </navigator>
+  </view>
+</view>
+<!--第一个广告位-->
+<view style="height:410rpx;">
+		<view class="bann_list1">
+      <navigator class="bann_list1_1" url="../zhuanti/index?id=1">
+        <image src="{{proBanner.BannerArray[0].imgUrl}}"></image>
+      </navigator>
+    </view>
+		<view class="bann_list1">
+			<navigator class="bann_list1_2" url="../zhuanti/index?id=1">
+        <image src="{{proBanner.BannerArray[1].imgUrl}}" ></image>
+      </navigator>			
+			<navigator class="bann_list1_2" url="../zhuanti/index?id=1">
+        <image src="{{proBanner.BannerArray[2].imgUrl}}"></image>
+      </navigator>
+		</view>
+</view>
+<view class="clear"></view>
+  <!--名媛案例-->
+<view>
+  <swiper class="mingyuan_swiper" indicator-dots="{{mingyuanItems.indicatorDots}}" 
+    autoplay="{{mingyuanItems.autoplay}}" interval="{{mingyuanItems.interval}}" duration="{{mingyuanItems.duration}}" >
+    <block wx:for="{{mingyuanItems.mingyuanArray}}">
+      <swiper-item>
+        <navigator url="{{item.itemUrl}}?id={{item.id}}">
+          <image src="{{item.itemPicUrl}}" class="slide-image" />
+          <text>{{item.itemText}}</text>
+        </navigator>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<!--专家-->
+
+<view>
+<image style="width:100%; height: 645rpx;"  src="http://static.gmzx.com/images/phone/index/index_mzd.jpg"></image>
+</view>
+<!--明星见证-->
+
+<view>
+<image style="width:100%; height: 540rpx;"  src="http://static.gmzx.com/images/phone/index/mingxing.jpg"></image>
+</view>
+<view class="foot_pinpai">
+		<navigator url="http://www.gmzx.com/catalog_show/pinpai"><image src="http://static.gmzx.com/images/phone/index/anquan.png"></image><text>安全</text></navigator>
+		<navigator url="http://www.gmzx.com/catalog_show/pinpai"><image src="http://static.gmzx.com/images/phone/index/rongyu.png"></image><text>荣誉</text></navigator>
+		<navigator url="http://www.gmzx.com/catalog_show/pinpai"><image src="http://static.gmzx.com/images/phone/index/guimo.png" ></image><text>规模</text></navigator>
+		<navigator url="http://www.gmzx.com/catalog_show/pinpai"><image src="http://static.gmzx.com/images/phone/index/gongyi.png"></image><text>公益</text></navigator>
+	</view>
+  
+<!--地图-->
+
+<view>
+<image style="width:100%; height: 300rpx;"  src="http://static.gmzx.com/images/phone/index2017/footer_.jpg"></image>
+</view>

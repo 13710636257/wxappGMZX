@@ -1,0 +1,4 @@
+<official-account></official-account>
+<view class="mall-body">
+  <web-view src="{{url}}"></web-view>
+</view>

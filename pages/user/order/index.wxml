@@ -1,0 +1,85 @@
+
+<!-- <view class="mall-body">
+  <web-view src="{{url}}"></web-view>
+</view> -->
+<view class="page">
+  <view class="header">
+    <form bindsubmit='formSubmit' bindreset="formReset" report-submit='true'>
+    <view class="zhifu section">       
+       <picker bindchange="bindPayChange" value="{{payStatuses[payStatusIndex].value}}" range="{{payStatuses}}"  range-key="name">
+         <view class="weui-select weui-select_in-select-bottom">支付状态</view>
+        </picker>
+    </view>
+    <view class="dingdan section">       
+      <picker bindchange="bindOrderChange" value="{{orderStatuses[orderStatusIndex].value}}" range="{{orderStatuses}}"  range-key="name">
+         <view class="weui-select weui-select_in-select-bottom">订单状态</view>
+        </picker>
+    </view>
+    
+    <button formType="submit" class="search section">  
+      <text class="iconfont icon-sousuo"></text>     
+        搜索
+    </button>
+    </form>
+  </view>
+
+  
+
+  <scroll-view scroll-y="true" class="scroll_view" style="height:{{scrollHeight}}px;">
+    <view wx:if="{{recordList.length<=0}}">
+      <text>啥也没有</text>
+    </view>
+    <block wx:for="{{recordList}}" wx:key="index">
+      <view class="list-group">
+        <navigator class="list-group-top list">
+            <view class=" ">{{item.id}}</view>            
+            <block wx:if="{{item.orderStatus==0}}"><text class="wfk btn-danger">未付款</text></block>
+            <block wx:elif="{{item.orderStatus==1}}"><text class="wfk btn-success">已支付</text></block>
+            <block wx:elif="{{item.orderStatus==2}}"><text class="wfk btn-primary">已消费</text></block>
+            <block wx:elif="{{item.orderStatus==4}}"><text class="wfk btn-info">已退款</text></block>
+            <block wx:elif="{{item.orderStatus==5}}"><text class="wfk btn-warning">已失效</text></block>
+            <block wx:else><text class="wfk">已完成</text></block>  
+        </navigator>
+        <view class="list-group-bottom list">
+          <text class="time">	{{item.createTime}}</text>
+          <text class="price">￥{{item.payMoney}}</text>
+          <view class="fr">
+            <button type="primary" data-alias='{{item.productSkus[0].alias}}' bindtap="payUI" wx:if='{{item.orderStatus==0}}'>支付</button>
+            <button style='background-color: #337ab7;color: #fff;' data-id='{{item.id}}' bindtap="showSale">查看</button>
+            <button type="warn" data-id='{{item.id}}' bindtap="deleteConfirm" wx:if='{{item.orderStatus==0 || item.orderStatus==5}}'>删除</button>
+          </view>
+        </view>
+      </view>
+
+      <!--查看订单里面的sku弹框 -->
+      <view class="show-popup" wx:if='{{showId===item.id}}'>
+        <view class="popup-mask" bindtap="closeSkuTap"></view>
+        <view class="popup-contents">
+          <view class="pop-goods-close" bindtap="closeSkuTap"></view>
+          <view class="pop-goods-info" wx:for="{{item.productSkus}}" wx:key="index" wx:for-item="sku">
+            <view class="info-left">
+                <view class="pop-img-box">
+                  <image src="{{sku.shareImgUrl}}" data-src='{{sku.shareImgUrl}}' class="goods-thumbnail" />
+                </view>
+                <view class="pop-goods-des">
+                  <view class="pop-goods-title">{{sku.title}}</view>
+                  <view class="pop-goods-price">¥ {{sku.price}}</view>
+                </view>
+            </view>
+          </view>      
+        </view>
+      </view>
+
+    </block>
+  </scroll-view>  
+
+  <!-- 分页 -->
+  <view class="paging" >
+    <text decode="{{true}}" class="arrow" bindtap='prevPage'>←</text>
+      <view>
+        第 <text class="pageNumber">{{page}}</text> 页 
+        共 <text class="pageNumber">{{pageCount}}</text> 页
+      </view>
+      <text decode="{{true}}" class="arrow" bindtap='nextPage'>→</text>
+  </view>
+</view>

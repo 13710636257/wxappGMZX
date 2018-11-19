@@ -1,0 +1,26 @@
+var baseUrl = 'https://wx.gmzx.com/wxApp';
+var config = {
+  APPID:'wx2610b9ef9485e09e',  //广美服务号关联的小程序
+  APPSECRET:'964288a662d25f7b0e82735dd3d8bf68',
+  HTTP_BASE_URL:baseUrl,
+  HTTP_INDEX_NAV_URL: "/index/navTop.json",
+  HTTP_INDEX_NAV_ITEMS_URL: "/index/navItems.json",
+  HTTP_INDEX_ICON_ITEMS_URL: "/cms/iconItems.json",
+  HTTP_INDEX_PROBANNER_ITEMS_URL:"/cms/proBanner.json",
+  HTTP_INDEX_ITEMCONTENT_URL: "/cms/itemContent.json",
+  HTTP_INDEX_MYITEM_ITEMS_URL: "/cms/mingyuanItems.json",
+  HTTP_wxfans_baobeiList_URL: "/user/wxFans/baobeiList.json",
+  HTTP_wxfans_cashList_URL: "/user/wxFans/cashList.json",
+  HTTP_wxfans_diaryBookList_URL: "/user/wxFans/diaryBookList.json",
+  HTTP_wxfans_diaryDetails_URL: "/user/wxFans/diaryDetails.json",
+  HTTP_wxfans_scoreList_URL: "/user/wxFans/scoreList.json",
+  HTTP_wxfans_quanList_URL: "/user/wxFans/quanList.json",
+  HTTP_wxfans_quanDetails_URL: "/user/wxFans/quanDetails.json",
+  HTTP_wxfans_teamList_URL: "/user/wxFans/teamList.json",
+  HTTP_SHOP_INDEX_NAV_URL: "/shop/index/navTop.json",
+  HTTP_SHOP_INDEX_LIST1_URL: "/shop/index/productList1.json",
+  HTTP_SHOP_INDEX_LIST2_URL: "/shop/index/productList2.json",
+  HTTP_SHOP_INDEX_LIST3_URL: "/shop/index/productList3.json"
+}
+
+module.exports = config;

@@ -1,0 +1,26 @@
+<!--pages/shop/index/index.wxml-->
+<swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{3000}}" duration="{{true}}">
+  <block wx:for="{{navTop.imgUrls}}">
+    <swiper-item>
+      <navigator url="../detail/index?id={{item.src}}">
+        <view class="banner">
+          <image mode="widthFix" src="{{item.src}}"></image>
+        </view>
+      </navigator>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="content">
+  <image mode="widthFix" src="http://static.gmzx.com/images/phone/case/shuang12/shuang12-1.jpg"></image>
+  <navigator url="../detail/index" wx:for="{{productList1.rows}}">
+    <image mode="widthFix" src="{{item.imgUrl}}"></image>
+  </navigator>
+  <image mode="widthFix" src="http://static.gmzx.com/images/phone/case/shuang12/shuang12-6.jpg"></image>
+  <navigator url="../detail/index" wx:for="{{productList2.rows}}">
+    <image mode="widthFix" src="{{item.imgUrl}}"></image>
+  </navigator>
+  <image mode="widthFix" src="http://static.gmzx.com/images/phone/case/shuang12/shuang12-10.jpg"></image>
+  <navigator class="productListl3" url="../detail/index" wx:for="{{productList3.rows}}">
+    <image mode="widthFix" src="{{item.imgUrl}}"></image>
+  </navigator>
+</view>

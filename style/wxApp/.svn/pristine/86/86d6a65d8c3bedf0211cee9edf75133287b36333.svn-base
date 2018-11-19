@@ -1,0 +1,15 @@
+{
+  "navigationBarTitleText": "美丽大使",
+  "tabBar": {
+    "selectedColor": "#F5B223",
+    "color": "#9A9A9A",
+    "list": [
+      {
+        "pagePath": "/pages/user/beauty/index",
+        "text": "首页",
+        "iconPath": "/images/shouye1.png",
+        "selectedIconPath": "/images/shouye.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,114 @@
+var config = require('../../../../config.js');
+var http = require('../../../../utils/httpHelper.js');
+var app = getApp();
+Page({
+  data: {
+    scoreList: [],
+    showLoadMore: false,
+    showNoMore: false,
+    page:1,
+    total:0,
+    scrollHeight: 0,
+	isbut:true,
+	rows:20
+  },
+
+  onLoad: function (options) {
+    console.log(options);
+    var that = this;
+    that.getScoreList();
+
+    wx.getSystemInfo({
+      success: function (res) {
+        var hight = (res.windowHeight) * (750 / res.windowWidth);
+        that.setData({
+          scrollHeight: hight
+        });
+        console.log("屏幕高度: " + res.windowHeight + " 像素比", res.pixelRatio, "  ", hight)
+      }
+    })
+
+    var wxFans = wx.getStorageSync('user') || {};
+    if (!wxFans.unionid) {
+      app.getWxFans().then(function (res) {
+        console.log(res);
+        that.setData({
+          wxFans: res.data,
+          url: config.HTTP_BASE_URL + '/beauty_jiFengList?__ajax=json&beautyId=' + res.data.beautyId
+        });
+      })
+      app.getUserInfo().then(function (res) {
+        that.setData({
+          userInfo: res.data
+        });
+      });
+    } else {
+      that.setData({
+        wxFans: wx.getStorageSync('user') || {},
+        userInfo: wx.getStorageSync('userInfo') || {},
+        url: config.HTTP_BASE_URL + '/beauty_jiFengList?__ajax=json&beautyId=' + wxFans.beautyId
+      });
+    }
+  },
+
+  getScoreList: function (e) {
+    var that = this;
+    http.httpGet(config.HTTP_wxfans_scoreList_URL, { page: that.data.page, rows: 10 }, function (res) {
+      console.log('that.data.page:' + that.data.page)
+      var page = that.data.page;
+      var listNum = that.data.rows;
+      var curPage = (page-1)*listNum;
+      var scoreList3 = that.data.scoreList;
+      console.log('page',page)
+      console.log('listNum',listNum)
+
+      if(page == 1){
+        that.setData({ 
+          scoreList: res.obj.rows.slice(curPage, listNum),
+          total: res.obj.total,
+          showLoadMore:true
+        });
+        console.log('scoreList',that.data.scoreList)
+      }else{
+        var scoreList2 = res.obj.rows.slice(curPage,curPage+listNum);
+        console.log('curPage',curPage);
+        console.log('scoreList2',scoreList2);
+        for(var i=0; i < scoreList2.length; ++i){
+          scoreList3.push(scoreList2[i]);
+        }
+        console.log('scoreList3',scoreList3)
+        that.setData({ 
+          scoreList: scoreList3,
+          total: res.obj.total,
+          isbut:true
+        });	  
+      }
+	  
+    });
+  },
+
+  loadMore: function (e) {
+    var that = this;
+    if(that.data.isbut){
+      if (that.data.page * 20 > that.data.total) {
+        that.setData({
+          showLoadMore: false,
+          showNoMore: true,
+          isbut:false
+        });
+      } else {
+        var p = that.data.page+1;
+
+        that.setData({
+          page: p,
+          showLoadMore: true,
+          isbut:false
+        })
+        that.getScoreList();
+      }
+    }
+  }
+
+
+
+})

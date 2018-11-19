@@ -1,0 +1,95 @@
+<import  src='../../templates/item-icons/item-icons.wxml' />
+
+<view class="page">
+<!-- 客服会话 -->
+    <button class="kf yuyue_button" bindtap='swtOpen'>
+        <image src="{{kfIcon}}" class="kf_image"></image> 
+    </button>
+    <button class="kf kf_phone iconfont icon-dianhua" bindtap="calling"></button>
+<!-- 轮播图 -->
+  <swiper class="banner" indicator-dots="{{navTop.indicatorDots}}" autoplay="{{navTop.autoplay}}" 
+          interval="{{navTop.interval}}" duration="{{navTop.duration}}"
+          indicator-color="{{navTop.indicatorColor}}"
+          indicator-active-color="{{navTop.indicatorActiveColor}}">
+     <block wx:for="{{navTop.imgUrls}}" wx:key="{{navTop.index}}"> 
+        <swiper-item>
+          <navigator url="../../webview/webview?url={{item.url}}">
+            <image src="{{item.src}}" class="slide-image" />
+          </navigator>
+        </swiper-item>
+    </block>
+  </swiper>
+</view>
+<!-- 项目分类 -->
+<view class="category">
+  <template is='itemIconsTemplate' data='{{items:iconItems.iconArray}}' />    
+</view>
+<!--第一个广告位-->
+<view style="height:410rpx;">
+  <view class="bann_list1">
+    <navigator class="bann_list1_1" url="../../webview/webview?url={{proBanner.BannerArray[0].url}}">
+      <image src="{{proBanner.BannerArray[0].imgUrl}}"></image>
+    </navigator>
+  </view>
+  <view class="bann_list1">
+    <navigator class="bann_list1_2" url="../../webview/webview?url={{proBanner.BannerArray[1].url}}">
+      <image src="{{proBanner.BannerArray[1].imgUrl}}"></image>
+    </navigator>
+    <navigator class="bann_list1_2" url="../../webview/webview?url={{proBanner.BannerArray[2].url}}">
+      <image src="{{proBanner.BannerArray[2].imgUrl}}"></image>
+    </navigator>
+  </view>
+</view>
+
+<view class="clear"></view>
+<!--名媛案例-->
+<view>
+  <view class="case-title">
+      <image src="https://cdn.gmzx.com/images/phone/new-phone/case-title.jpg"></image>
+  </view>
+  <swiper class="mingyuan_swiper" indicator-dots="{{mingyuanItems.indicatorDots}}" 
+        autoplay="{{mingyuanItems.autoplay}}" interval="{{mingyuanItems.interval}}"
+        duration="{{mingyuanItems.duration}}"  indicator-color="{{mingyuanItems.indicatorColor}}"
+        indicator-active-color="{{mingyuanItems.indicatorActiveColor}}">
+      <block wx:for="{{mingyuanItems.mingyuanArray}}">
+        <swiper-item>
+          <!-- <navigator url="{{item.itemUrl}}?id={{item.id}}"> -->
+            <image src="{{item.itemPicUrl}}" class="slide-image" />
+          <!-- </navigator> -->
+        </swiper-item>
+      </block>
+  </swiper>
+</view>
+<!--专家-->
+<view>
+  <navigator url="../../webview/webview?url=https://www.gmzx.com/doctor_showList">
+       <image style="width:100%; height: 645rpx;" src="https://static.gmzx.com/images/phone/common/new_experts.jpg"></image>
+  </navigator>
+</view>
+<!--明星见证-->
+<view>
+  <image style="width:100%; height: 540rpx;" src="https://static.gmzx.com/images/phone/index/mingxing.jpg"></image>
+</view>
+<view class="foot_pinpai">
+  <navigator url="https://www.gmzx.com/catalog_show/pinpai">
+    <image src="https://static.gmzx.com/images/phone/index/anquan.png"></image>
+    <text>安全</text>
+  </navigator>
+  <navigator url="https://www.gmzx.com/catalog_show/pinpai">
+    <image src="https://static.gmzx.com/images/phone/index/rongyu.png"></image>
+    <text>荣誉</text>
+  </navigator>
+  <navigator url="http://www.gmzx.com/catalog_show/pinpai">
+    <image src="https://static.gmzx.com/images/phone/index/guimo.png"></image>
+    <text>规模</text>
+  </navigator>
+  <navigator url="https://www.gmzx.com/catalog_show/pinpai">
+    <image src="https://static.gmzx.com/images/phone/index/gongyi.png"></image>
+    <text>公益</text>
+  </navigator>
+</view>
+
+<!--地图-->
+<view>
+  <image style="width:100%; height: 300rpx;" src="https://static.gmzx.com/images/phone/index2017/footer_.jpg"></image>
+</view>

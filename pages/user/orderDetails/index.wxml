@@ -1,0 +1,32 @@
+      <view class="weui-tab__panel">
+        <view class="weui-tab__content">
+          <view class="page font-14">
+            <view class="page__bd">
+              <view class="weui-cells weui-cells_after-title">
+                <navigator url="" class="weui-cell weui-cell_access font-16 bor-bot" hover-class="weui-cell_active">
+                  <view class="weui-cell__bd ">5169061061601610</view>
+                  <view class="weui-cell__ft">未付款</view>
+                </navigator>
+                <navigator url="" hover-class="weui-cell_active">
+                  <view class="nav_section">
+                    <view>
+                      <view class="nav_section_items">
+                        <view class="section_image">
+                          <image mode="aspectFill" src="http://static.gmzx.com/images/public/phoneBanner/wanRenTuoMao.jpg"></image>
+                        </view>
+                        <view class="section_cont">
+                          <view class="section_cont_sub">
+                            <text>万人脱毛寄万人脱毛寄</text>
+                          </view>
+                          <view class="section_cont_price">价格：¥198</view>
+                          <view>万人脱毛寄万人脱毛寄</view>
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                </navigator>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>

@@ -1,0 +1,54 @@
+<official-account></official-account>
+<view class="container-shop">
+  <scroll-view scroll-Y="true" scroll-X="false">
+    <!-- 回到顶部 -->
+    <view class="backTop" bindtap='backTop' wx:if="{{backTopValue ==true}}">
+      <image src="http://static.gmzx.com/images/phone/common/backtop.png"></image>
+    </view>
+    <!-- 详情 -->
+    <view class="goods-content">
+      <image mode="aspectFill" src="https://cdn.gmzx.com/images/phone/zhuanti/zt-item/lingdongyan/dayanshu_01.jpg"></image>
+      <image mode="aspectFill" src="https://cdn.gmzx.com/images/phone/zhuanti/zt-item/lingdongyan/dayanshu_02.jpg" />
+      <image mode="aspectFill" src="https://cdn.gmzx.com/images/phone/zhuanti/zt-item/lingdongyan/dayanshu_14.jpg" />
+      <image mode="aspectFill" src="https://cdn.gmzx.com/images/phone/zhuanti/zt-item/lingdongyan/dayanshu_14.jpg" />  
+   </view>
+  </scroll-view>
+
+  <view class="footer">
+      <button class="kefu" bindtap='swtOpen'>
+          <image src="https://static.gmzx.com/images/weixin/logo/kefu.png"></image>
+     </button>
+    <view class="footer_btn">
+      <view class='related-goods' bindtap="addshopcar">
+        <view class="iconfont icon-caidan" style='font-size:24px;'></view>
+        相关商品
+      </view>
+      <text class="price">￥2980</text>
+      <view class="zhifu">立即支付</view>
+    </view>
+  </view>
+<!-- 相关商品弹框 -->
+  <view class="show-popup" hidden="{{hideShopPopup}}">
+    <view class="popup-mask" bindtap="closeSkuTap"></view>
+    <view class="popup-contents">
+    <!-- 关闭按钮 -->
+      <view class="pop-goods-close" bindtap="closeSkuTap"></view>
+      <view class="pop-goods-info" wx:for="{{sku}}" wx:key="index">
+        <view class="info-left">
+            <view class="pop-img-box">
+              <image src="{{item.productImg}}" class="goods-thumbnail" />
+            </view>
+            <view class="pop-goods-des">
+              <view class="pop-goods-title">{{item.productName}}</view>
+              <view class="pop-goods-price">¥ {{item.price}}</view>
+            </view>
+        </view>
+        <navigator url='{{item.productUrl}}' class="checkmore">查看更多</navigator>
+      </view>
+      
+    </view>
+  </view>
+
+
+
+</view>

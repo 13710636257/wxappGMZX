@@ -1,0 +1,24 @@
+/* pages/shop/index/index.wxss */
+swiper{height: 280px;}
+.banner{
+   display: flex;
+  flex-wrap: wrap;
+}
+.content{
+  background: red;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+}
+.content navigator{
+   width: 46%;
+  flex-direction:column; 
+  align-items: center;
+
+}
+.banner image,.content image{
+   width: 100%;
+}
+.productListl3{
+  width: 96% !important;
+}

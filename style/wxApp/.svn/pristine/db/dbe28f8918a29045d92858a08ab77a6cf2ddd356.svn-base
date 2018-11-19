@@ -1,0 +1,4 @@
+@import "../../../wxParse/wxParse.wxss";
+view{display:flex; flex: content;
+  flex-wrap: wrap;}
+  image{display:flex;text-align: center;}

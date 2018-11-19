@@ -1,0 +1,24 @@
+.quanpic{
+	display:block;
+	width:100%;
+  border-radius:12rpx;
+}
+.detail{
+  padding: 20rpx;
+  border: #dddddd 1px solid;
+}
+.detail view{
+  border-bottom: #dddddd 1px solid;
+  padding-bottom: 14rpx;
+  padding-top: 14rpx;
+}
+.detail view:last-child{
+  border-bottom: none;
+}
+.state{
+  float:right;
+  padding:8rpx 20rpx;
+  color:#fff;
+  border-radius:8rpx;
+  font-size:24rpx;
+}

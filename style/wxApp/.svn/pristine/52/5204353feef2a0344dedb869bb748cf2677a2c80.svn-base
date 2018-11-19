@@ -1,0 +1,92 @@
+<official-account></official-account>
+<view class="personal_info">
+  <!-- 获取用户头像与昵称 -->
+  <view class="user-section">
+    <view class="user-info">
+      <view class="photo_wrap">
+        <image src="{{userInfo.avatarUrl}}" class="photo"></image>
+      </view>
+      <view class="nickname">
+        {{userInfo.nickName}}
+      </view>
+    </view>
+    <view class="page-bottom">
+      <!-- <view wx:if="{{!hasShouQuan}}"> -->
+      <view>
+        <button wx:if="{{canIUse}}" class='shouquan bottom'  open-type="getUserInfo" 
+        lang="zh_CN" bindgetuserinfo="bindGetUserInfo" >
+          授权登录
+        </button>
+      </view>
+      <view wx:if="{{wxFans.phone}}" class="phonenumber">
+        <text class="number">{{wxFans.phone}}</text>
+        <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="phone-btn bottom">
+        更新手机号码</button> 
+      </view>
+      <view wx:else>
+        <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="phone-btn bottom">
+        绑定手机号码</button>  
+      </view>
+    </view>
+</view> 
+
+  <view class="order-class">
+    <navigator class="item-order" url="/pages/user/beauty/score/index">
+      <view class=" iconfont icon-wodejifen" style='font-size:26px;padding-top:15rpx;'></view>
+      <text class="item--order-text">我的积分</text>
+    </navigator>
+    <navigator class="item-order" url="/pages/user/beauty/baoBeiList/index">
+      <view class="iconfont icon-tuijian"></view>
+      <text class="item--order-text">报备推荐</text>
+    </navigator>
+    <navigator class="item-order" url="/pages/user/myTeam/index">
+      <view class="iconfont icon-Team"></view>
+      <text class="item--order-text">我的团队</text>
+    </navigator>
+    <navigator class="item-order" url="">
+      <view class="iconfont icon-tubiaozhizuomoban"></view>
+      <text class="item--order-text">购物车</text>
+    </navigator>
+  </view>
+</view>
+
+<!-- article start -->
+<view class="user-article">
+  <navigator url="/pages/user/order/index">
+    <view class="user-order">
+      <text class="order-all">全部订单</text>
+      <view class="order-look">
+        <view class="iconfont  icon-youjiantou"></view>
+      </view>
+    </view>
+  </navigator>
+</view>
+
+<!-- <view class="wode_item_wrap">
+  <navigator wx:for="{{mode}}" url="{{item.url}}">
+    <view class="wode_item">
+      {{item.name}}
+      <span class="arrow_wrap iconfont  icon-youjiantou"></span> 
+    </view>
+  </navigator>
+</view>
+<view class="wode_item_wrap" style='margin-top:0rpx'>
+    <view class="wode_item" bindtap="getLocation">
+      医院位置
+      <span class="arrow_wrap iconfont  icon-youjiantou"></span> 
+    </view>
+</view> -->
+<view class="wode_item_wrap" style='margin-top:0rpx'>
+  <navigator url="/pages/user/erweima/index">
+    <view class="wode_item">
+      我的二维码
+      <span class="arrow_wrap iconfont  icon-youjiantou"></span> 
+    </view>
+  </navigator>
+</view>
+
+<view>  
+  <button type="primary" class="clearbtn" bindtap="clearStorage" 
+    loading="{{loading}}" disabled="{{disabled}}">清空缓存</button>
+ </view>
+ 

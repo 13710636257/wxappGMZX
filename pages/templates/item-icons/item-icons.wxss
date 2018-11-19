@@ -1,0 +1,6 @@
+@import '/pages/templates/item-icon/item-icon.wxss';
+
+.category-item {
+  width: 25%;
+  margin: 10rpx 0;
+}

@@ -1,0 +1,16 @@
+
+.icon_wrap {
+  width: 80rpx;
+  margin: 0 auto;
+  margin-bottom: 5rpx;
+}
+.index_icon {
+  width: 80rpx;
+  height: 80rpx;
+}
+.category_item_text {
+  text-align: center;
+  font-size: 14px;
+  color: #737373;
+  white-space: normal; /*文本自动换行 */
+}

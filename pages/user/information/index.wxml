@@ -1,0 +1,36 @@
+<view class="page">
+    <view class="page__bd" style='padding:0 20rpx;'>
+        <view class="weui-cells weui-cells_after-title font-18">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入姓名"/>
+                </view>
+            </view>            
+			<view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入手机号"/>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input weui-cell_vcode">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="手机验证码" />
+                </view>
+                <view class="weui-cell__ft">
+                    <view class="weui-vcode-btn font-18">获取验证码</view>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_input weui-cell_vcode">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入图片验证码" />
+                </view>
+                <view class="weui-cell__ft">
+                    <image class="weui-vcode-img" src="http://wx.gmzx.com/gmweb/index_yzm?lenth=4" style="width: 108px"></image>
+                </view>
+            </view>
+        </view>
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="showTopTips">确定</button>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,8 @@
+<import src='../item-icon/item-icon.wxml' />
+<template name='itemIconsTemplate'>
+  <view class="category-item" wx:for="{{items}}">
+    <view bindtap='itemTap' data-itemId='{{item.id}}' data-url='{{item.url}}'>
+      <template is='itemIconTemplate' data='{{...item}}' />    
+    </view>
+  </view>
+</template>

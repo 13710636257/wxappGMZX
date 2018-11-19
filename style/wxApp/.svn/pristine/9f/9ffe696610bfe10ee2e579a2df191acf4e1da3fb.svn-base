@@ -1,0 +1,124 @@
+var util = require('../../../../utils/util.js')
+Page({
+  data: {
+    showTips: false,
+	errorTip:"错误提示！",
+    date: "",
+    startdate: "",
+    hospitals: ["广美天河旗舰院", "广美佛山旗舰院", "广美珠江旗舰院"],
+    checkboxItems: [
+      { name: '手术', value: '0' },
+      { name: '皮肤', value: '1' },
+      { name: '注射', value: '2' }
+    ],
+    hospitalIndex: 0
+  },
+
+  onLoad: function (options) {
+    var that = this;
+    var dateTime = util.formatDate(new Date());
+    console.log('date', dateTime)
+    that.setData({
+      date: dateTime,
+      startdate: dateTime
+    })
+  },
+
+  showTopTip: function () {
+    var that = this;
+    this.setData({
+      showTips: true
+    });
+    setTimeout(function () {
+      that.setData({
+        showTips: false
+      });
+    }, 3000);
+  },
+
+  bindDateChange: function (e) {
+    this.setData({
+      date: e.detail.value
+    })
+  },
+  bindAccountChange: function (e) {
+    console.log('picker account 发生选择改变，携带值为', e.detail.value);
+
+    this.setData({
+      hospitalIndex: e.detail.value
+    })
+  },
+  checkboxChange: function (e) {
+    console.log('checkbox发生change事件，携带value值为：', e.detail.value);
+
+    var checkboxItems = this.data.checkboxItems, values = e.detail.value;
+    for (var i = 0, lenI = checkboxItems.length; i < lenI; ++i) {
+      checkboxItems[i].checked = false;
+
+      for (var j = 0, lenJ = values.length; j < lenJ; ++j) {
+        if (checkboxItems[i].value == values[j]) {
+          checkboxItems[i].checked = true;
+          break;
+        }
+      }
+    }
+
+    this.setData({
+      checkboxItems: checkboxItems
+    });
+  },
+  formSubmit: function (e) {
+    var that = this,
+		describe = e.detail.value.describe,
+		Items = e.detail.value.Items;
+	console.log('describe',describe)
+	if(Items == '' || that.data.hospitals == '' || describe == ''){
+		that.setData({
+			errorTip:'不能为空！'
+		})
+		this.showTopTip();
+		return false;
+	}
+	/*
+    wx.request({
+      url: '',
+      data:
+      {
+        name: e.detail.value.name,
+        age: e.detail.value.age,
+        gender: e.detail.value.gender
+      }
+      ,
+      method: 'POST',
+      header: {				
+        'content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
+      },
+      success: function (res) {
+        var err = res.data.error
+        if (err) {
+          that.setData({
+            error: err
+          })
+        }
+        else {
+          wx.redirectTo({
+            url: 'create_photo'
+          })
+        }
+      },
+      fail: function () {
+        // fail
+      },
+      complete: function () {
+        // complete
+      }
+    })
+	*/
+  },
+  formReset: function (e) {
+    console.log('form发生了reset事件，携带数据为：', e.detail.value)
+    this.setData({
+      chosen: ''
+    })
+  }
+});

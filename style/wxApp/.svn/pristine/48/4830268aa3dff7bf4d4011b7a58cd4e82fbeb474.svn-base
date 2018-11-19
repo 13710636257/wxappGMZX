@@ -1,0 +1,46 @@
+var WxAutoImage = require('../../../utils/wxAutoImageCal.js');
+var config = require('../../../config.js')
+var http = require('../../../utils/httpHelper.js')
+var imageUtil = require('../../../utils/util.js');
+
+var app = getApp();
+
+Page({   
+    onLoad: function () {
+      var that = this;
+      http.httpGet(config.HTTP_INDEX_NAV_URL,{},function (res) {
+          console.info(res);
+          var navTop = res.obj;
+          that.setData({ "navTop": navTop });
+        }
+      ) 
+      http.httpGet(config.HTTP_INDEX_ICON_ITEMS_URL, {}, function (res) {
+        var iconArray = res.obj;
+        console.info(iconArray);
+        that.setData({ "iconItems": iconArray });
+      }
+      ) 
+      http.httpGet(config.HTTP_INDEX_PROBANNER_ITEMS_URL, {}, function (res) {
+        var BannerArray = res.obj;
+        console.info(BannerArray);
+        that.setData({ "proBanner": BannerArray});
+      }
+      ) 
+      http.httpGet(config.HTTP_INDEX_MYITEM_ITEMS_URL, {}, function (res) {
+        var mingyuanArray = res.obj;
+        that.setData({ "mingyuanItems": mingyuanArray });
+      }
+      ) 
+    },
+    data: {      
+        navTop:{},        
+        iconItems: {},
+        proBanner:{},
+        mingyuanItems: {}
+    },
+    cusImageLoad: function(e){
+        var that = this;
+        that.setData(WxAutoImage.wxAutoImageCal(e));
+    }
+
+})

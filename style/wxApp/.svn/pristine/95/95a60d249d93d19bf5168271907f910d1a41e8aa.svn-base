@@ -1,0 +1,100 @@
+var WxAutoImage = require('../../utils/wxAutoImageCal.js');
+var config = require('../../config.js')
+var http = require('../../utils/httpHelper.js')
+
+var app = getApp();
+
+Page({   
+    onLoad: function () {
+      var that = this;
+      http.httpGet(config.HTTP_INDEX_NAV_URL,{},function (res) {
+          console.info(res);
+          var navTop = res.obj;
+          that.setData({ "navTop": navTop });
+        }
+      ) 
+    },
+    data: {      
+        navTop:{},        
+        iconArray: [
+          {
+            "iconUrl": 'http://static.gmzx.com/images/phone/index/meilian.png',
+            "Url": '../cms/index/zhuanti/index',
+            "iconText": '美脸'
+          },
+          {
+            "iconUrl": 'http://static.gmzx.com/images/phone/index/meiyan.png',
+            "Url": '../cms/index/zhuanti/index',
+            "iconText": '美眼'
+          },
+          {
+            "iconUrl": 'http://static.gmzx.com/images/phone/index/meibi.png',
+            "Url": '../cms/index/zhuanti/index',
+            "iconText": '美鼻'
+          },
+          {
+            "iconUrl": 'http://static.gmzx.com/images/phone/index/meifu.png',
+            "Url": '../cms/index/zhuanti/index',
+            "iconText": '美肤'
+          },
+          {
+            "iconUrl": 'http://static.gmzx.com/images/phone/index/quban.png',
+            "Url": '../cms/index/zhuanti/index',
+            "iconText": '祛斑'
+          },
+          {
+            "iconUrl": 'http://static.gmzx.com/images/phone/index/kangshuailao.png',
+            "Url": '../cms/index/zhuanti/index',
+            "iconText": '抗衰'
+          },
+          {
+            "iconUrl": 'http://static.gmzx.com/images/phone/index/tuomao.png',
+            "Url": '../cms/index/zhuanti/index',
+            "iconText": '脱毛'
+          },
+          {
+            "iconUrl": 'http://static.gmzx.com/images/phone/index/boniaosuan.png',
+            "Url": '../cms/index/zhuanti/index',
+            "iconText": '玻尿酸'
+          },
+          {
+            "iconUrl": 'http://static.gmzx.com/images/phone/index/roudusu.png',
+            "Url": '../cms/index/zhuanti/index',
+            "iconText": '瘦脸针'
+          },
+          {
+            "iconUrl": 'http://static.gmzx.com/images/phone/index/shuiguangzhen.png',
+            "Url": '../cms/index/zhuanti/index',
+            "iconText": '水光针'
+          },
+          {
+            "iconUrl": 'http://static.gmzx.com/images/phone/index/remaji.png',
+            "Url": '../cms/index/zhuanti/index',
+            "iconText": '热玛吉'
+          },
+          {
+            "iconUrl": 'http://static.gmzx.com/images/phone/index/kaiyanjiao.png',
+            "Url": '../cms/index/zhuanti/index',
+            "iconText": '开眼角'
+          }
+        ],
+        itemArray: [
+            {
+                "itemUrl": '../../images/huaju.jpeg',
+                "itemText": '11月20日话剧《风声》'
+            },
+            {
+                "itemUrl": '../../images/huaju.jpeg',
+                "itemText": '11月20日话剧《原野》'
+            },
+            {
+                "itemUrl": '../../images/huaju.jpeg',
+                "itemText": '11月28日“夜店”演唱会'
+            },
+        ]
+    },
+    cusImageLoad: function(e){
+        var that = this;
+        that.setData(WxAutoImage.wxAutoImageCal(e));
+    }
+})

@@ -1,0 +1,184 @@
+@import '/pages/templates/item-icons/item-icons.wxss';
+
+.container{
+  width: 100%;
+}
+.kf {
+  padding: 0;
+  background-color: rgba(215, 30, 90, 1);
+  border: 0px;
+  width: 80rpx;
+  height: 80rpx;
+  position: fixed;
+  right: 0;
+  z-index: 999;
+}
+.yuyue_button{
+  bottom: 492rpx;
+}
+.yuyue_button::after{
+  border: 0px;
+}
+.kf_image{
+  width: 80rpx;
+  height: 80rpx;
+}
+.kf_phone {
+  line-height: 80rpx;
+  text-align: center;
+  color: #fff;
+  bottom: 382rpx;
+}
+
+.swiper-item{
+  display: block;
+}
+.slide-image {
+  width: 100%;
+  height: 495rpx;
+}
+.banner {
+  width: 100%;
+  height: 495rpx;
+}
+.clear{
+  float: none;
+}
+
+/* 项目分类 */
+.category {
+  background-color: #FFF;
+  margin-bottom: 10px;
+  display: flex;
+  flex: content;
+  flex-wrap: wrap;
+  padding-top: 20rpx;
+}
+
+.singal_item {
+  text-align: center;
+  background-color: #FFF;
+  margin-bottom: 20rpx;
+}
+.singal_item_title {
+  padding: 24rpx;
+  font-size: 16px;
+}
+.singal_item_image {
+  line-height: 0;
+}
+.commen_title {
+  padding: 20rpx;
+  background-color: #fff;
+  font-size: 16px;
+  border-bottom: 1px solid #E9E9E9;
+}
+.single_goods_image {
+  width: 80px;
+  height: 80px;
+}
+.single_goods {
+  position: relative;
+  height: 100px;
+  background-color: #FFF;
+  padding-left: 100px;
+  border-bottom: 1px solid #E7E7EB;
+}
+.single_image_wrap {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.single_goods_infor {
+  padding: 10px 0;
+  position: relative;
+  height: 80px;
+}
+.single_goods_name {
+  font-size: 14px;
+}
+.single_goods_price {
+  font-size: 14px;
+  color: #FF1493;
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  width: 100%;
+  height: 22px;
+  line-height: 22px;
+}
+.single_goods_address {
+  color: #929292;
+  font-size: 12px;
+}
+.carImgWrap {
+  float: right;
+  margin-right: 15px;
+}
+.carImg {
+  width: 20px;
+  height: 20px;
+}
+/*首页分类下第一个板块banner样式*/
+.bann_list1 {
+    float: left;
+    height:410rpx;
+    width: 50%;
+    padding-right: 1px;
+    box-sizing: border-box;
+    display: block;
+    
+}
+.bann_list1 image,bann_list1_2 image{
+    width: 100%;
+    height: 100%;
+    padding-right: 1px;
+    box-sizing: border-box;
+}
+.bann_list1_1{
+  height: 400rpx;
+}
+.bann_list1_2{
+  height: 200rpx;
+}
+/*名媛案例*/
+.case-title {
+  width:100%;
+  height:136rpx;
+}
+.case-title image {
+  width: 100%;
+  height: 100%;
+}
+
+.mingyuan_swiper{
+  height:790rpx;
+}
+.mingyuan_swiper image{
+  position: relative;
+  height: 715rpx;
+}
+.mingyuan_swiper text{
+  margin-top:100px; 
+  padding: 20px;
+  font-size: 14px;
+}
+.foot_pinpai{
+    padding: 10px 0;
+    background: #000;
+    height: 110rpx;
+    display: flex; 
+    justify-content:space-around;
+  }
+
+.foot_pinpai navigator{
+  width: 21%;
+  border: #989898 3px solid;
+  background: #fff;
+  display: flex;
+  flex-direction:column; 
+  align-items: center;
+  justify-content:space-around;
+}
+.foot_pinpai navigator image{width: 35%;margin-top: 10rpx;height: 50rpx;}
+.foot_pinpai navigator text{font-size: 30rpx}

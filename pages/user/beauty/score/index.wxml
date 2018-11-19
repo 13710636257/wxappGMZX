@@ -1,0 +1,30 @@
+
+<view class="mall-body">
+  <web-view src="{{url}}"></web-view>
+</view>
+<!-- <view class="page">
+  <view class="result_view">
+    <scroll-view scroll-y="true" bindscrolltoupper="refresh" bindscrolltolower="loadMore" class="scroll_view" style="height:{{scrollHeight}}rpx">
+
+      <view class="page__bd page__bd_spacing bgfff" style="padding:0 20rpx;">
+        <block wx:for="{{scoreList}}">
+          <view class="weui-flex bor-bot ptb10 col666">
+            <view class="weui-flex__item">
+              <block wx:if="{{item.type == 0}}">减少</block>
+              <block wx:if="{{item.type == 1}}">增加</block>
+            </view>
+            <view class="weui-flex__item text-center">{{item.jifen}}</view>
+            <view class="weui-flex__item text-right">{{item.time}}</view>
+          </view>
+        </block>
+      </view>
+      <view hidden="{{!showLoadMore}}" class="weui-loadmore">
+        <view class="weui-loading" />
+        <view class="weui-loadmore__tips">正在加载...</view>
+      </view>
+      <view hidden="{{!showNoMore}}" class="weui-loadmore weui-loadmore_line">
+        已经没有更多了-_-
+      </view>
+    </scroll-view>
+  </view>
+</view> -->
